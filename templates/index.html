@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Email</title>
+</head>
+<body>
+    <form action="{{ url_for('send') }}" method="post">
+        <label for="sender">Sender:</label>
+        <input type="text" id="sender" name="sender"><br>
+        
+        <label for="recipients">Recipients:</label>
+        <input type="text" id="recipients" name="recipients"><br>
+        
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject"><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        
+        <input type="submit" value="Send Email">
+    </form>
+</body>
+</html>
