@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['MAIL_SERVER'] = 'smtp.example.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
@@ -10,9 +10,11 @@ app.config['MAIL_PASSWORD'] = 'password'
 
 mail = Mail(app)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/send', methods=['POST'])
 def send():
@@ -26,6 +28,7 @@ def send():
 
     mail.send(msg)
     return 'Email sent!'
+
 
 if __name__ == '__main__':
     app.run(debug=True)

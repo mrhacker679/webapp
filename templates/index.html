@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Send Email</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
 </head>
+
 <body>
+    <img src="{{ url_for('static', filename='gmail-logo.png') }}" alt="Gmail logo" class="gmail-logo">
+    <h1 class="heading">Send Email</h1>
+
     <form action="{{ url_for('send') }}" method="post">
         <label for="sender">Sender:</label>
         <input type="text" id="sender" name="sender"><br>
-        
+
         <label for="recipients">Recipients:</label>
         <input type="text" id="recipients" name="recipients"><br>
-        
+
         <label for="subject">Subject:</label>
         <input type="text" id="subject" name="subject"><br>
-        
+
         <label for="message">Message:</label>
         <textarea id="message" name="message"></textarea><br>
-        
+
         <input type="submit" value="Send Email">
     </form>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
